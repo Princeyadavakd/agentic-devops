@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    container_name: devops-demo-app
+    ports:
+      - "5000:5000"
+    environment:
+      - BUG_MODE=${BUG_MODE:-none}
+    mem_limit: 256m        # leak mode will hit this limit and the container gets killed
+    restart: unless-stopped
