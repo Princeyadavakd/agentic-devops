@@ -56,7 +56,10 @@ def health():
 
 @app.route("/users/<int:uid>")
 def get_user(uid):
-    return jsonify(USERS[uid])
+    user = USERS.get(uid)
+    if user is None:
+        return jsonify(error="user not found"), 404
+    return jsonify(user)
 
 
 @app.route("/discount/<int:price>/<int:percent>")
