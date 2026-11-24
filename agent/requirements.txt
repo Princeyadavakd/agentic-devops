@@ -1,0 +1,4 @@
+python-dotenv
+requests
+langgraph
+google-genai
