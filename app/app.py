@@ -19,7 +19,7 @@ _leak = []  # used only when BUG_MODE=leak
 
 def get_discount(price, percent):
     """Return price after applying a percentage discount."""
-    return price - percent
+    return price - (price * percent / 100)
 
 
 @app.before_request
