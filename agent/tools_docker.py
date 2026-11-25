@@ -48,6 +48,10 @@ def run_container(tag, bug="none"):
                  "-e", f"BUG_MODE={bug}", f"{IMAGE}:{tag}"], 120)
 
 
+def restart_container():
+    return _run(["docker", "restart", CONTAINER], 120)
+
+
 def container_logs(lines=40):
     return _run(["docker", "logs", "--tail", str(lines), CONTAINER], 60)[1]
 

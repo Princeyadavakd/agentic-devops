@@ -67,6 +67,10 @@ def route_health(state):
 
 def mark_good(state):
     old = T.load_state()
+    if state["bug"] != "none":
+        print("[deploy] fault-injected release is running but NOT promoted to 'last good'")
+        T.save_state({**old, "current_tag": state["tag"]})
+        return {"outcome": "healthy_not_promoted"}
     T.save_state({"last_good_tag": state["tag"], "current_tag": state["tag"], "previous_good_tag": old.get("last_good_tag")})
     return {"outcome": "healthy"}
 

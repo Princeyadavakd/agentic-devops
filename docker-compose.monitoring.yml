@@ -1,0 +1,18 @@
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    mem_limit: 300m
+    restart: unless-stopped
+
+  grafana:                      # optional: only starts with --profile grafana (uses more RAM)
+    image: grafana/grafana:latest
+    container_name: grafana
+    profiles: ["grafana"]
+    ports:
+      - "3000:3000"
+    mem_limit: 300m
