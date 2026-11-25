@@ -44,7 +44,7 @@ def home():
         _leak.append(bytearray(5 * 1024 * 1024))  # leak 5 MB per request
     if mode == "slow":
         time.sleep(2)
-    return jsonify(message="Demo app is running", bug_mode=mode)
+    return jsonify(message="Demo app is running", bug_mode=mode), 201
 
 
 @app.route("/health")
