@@ -1,0 +1,2 @@
+def test_ci_watcher_demo():
+    assert False, "Controlled CI watcher test"
