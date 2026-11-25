@@ -51,7 +51,7 @@ def home():
 def health():
     if os.getenv("BUG_MODE", "none") == "crash":
         return jsonify(status="unhealthy"), 500
-    return jsonify(status="up")
+    return jsonify(status="ok")
 
 
 @app.route("/users/<int:uid>")
