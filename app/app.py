@@ -10,7 +10,7 @@ REQUESTS = Counter("app_requests_total", "Total requests", ["endpoint", "status"
 LATENCY = Histogram("app_request_latency_seconds", "Request latency", ["endpoint"])
 
 USERS = {
-    1: {"name": "Aman", "email": "aman@example.com"},
+    1: {"name": "Amaan", "email": "aman@example.com"},
     2: {"name": "Riya", "email": "riya@example.com"},
 }
 
