@@ -16,7 +16,7 @@ Then run `wsl --shutdown` in PowerShell and restart Docker Desktop.
 
 ## 2. Run tests locally (PowerShell, inside this folder)
     python -m venv venv
-    venv\Scripts\activate
+    venv\Scripts\activatex
     pip install -r requirements-dev.txt
     pytest -v
 
